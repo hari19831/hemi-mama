@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Hemmingway Replica</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="hemmings.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countable/2.1.1/Countable.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <h1 class="jumbotron text-center">HEMMING WAY REPLICA</h1>
+  <br><br>
+  <div>
+   <button style="margin-left:20px;" id="write" onclick ="checkWrite()" class="btn btn-sm btn-primary">Write</button>
+   <button  id="edit" onclick ="stats()" style="margin-left:25px;" class="btn btn-sm btn-warning">Process</button>
+  </div><br>
+  <textarea rows="25" cols="70" id="idata"></textarea>
+	</div>
+	<div class="over_all">              
+	<!-- left panel start -->
+    <div class="left_panel">
+	 <button type="button" class="btn  btn-sm menu_panel_button active"> Score
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                            
+    </button>
+           <div class="navigation">
+                 <ul class="main_menu">
+                     <li><a href="#" class="menu_active"><i class="fa fa-tachometer" aria-hidden="true"></i><u><h4 class="text-center">SCORECARD</h4></u></a></li>
+                 </ul><br><br>
+                 <div class="readability" style="padding-left:10px;">
+                 <h3 style="color:black;">Readability</h3>
+                 <hr style="color:black;">
+                   <h4 style="color:black;"> Grade</h4>
+                     &nbsp;&nbsp;&nbsp;<span style="color:black;" id="grade">0</span>
+                <hr style="color:black;">    
+                </div>
+                <br>
+                <div class="wordCount" style="padding-left:10px;">
+                <h3 style="color:black;">Word Statistics</h3>
+                <hr>
+                    <h4 style="color:black;">Paragraph............&nbsp;<span id="para">0</span></h4>
+                    <h4 style="color:black;">Sentence..............&nbsp;<span id="sentence">0</span></h4>
+                    <h4 style="color:black;">All Characters.......&nbsp;<span id="allCharac">0</span></h4>
+                    <h4 style="color:black;">Characters............&nbsp;<span id="charac">0</span></h4>
+                    <h4 style="color:black;">Words...................&nbsp;<span id="words">0</span></h4>
+                    <h4 style="color:black;">Letters...................&nbsp;<span id="letters">0</span></h4>
+                    <h4 style="color:black;">Read-Time............&nbsp;<span id="readTime">0</span></h4>
+                <hr>
+                </div>
+               
+               <div class="suggestions" style="padding-left:10px;">
+                    <h3 style="color:black;">Suggestions</h3>
+                    <hr>
+                        <br>
+                        <h5 style="color:black;"><span id="hard">0</span> sentence hard to read</h5>
+                        <h5 style="color:black;"><span id="veryhard">0</span> sentence very hard to read</h5>
+                        <h5 style="color:black;"><span id="altr">0</span> simple alternatives</h5>
+                        <h5 style="color:black;"><span id="adv">0</span> adverb, remove it</h5>
+                   <h5 style="color:black;"><span id="passive">0</span> passive voice</h5>
+                    <hr>
+               </div>
+               
+           </div>
+    </div>
+    <!-- left panel end -->    
+    </div>
+  </body>
+</html>
+<script src="score-panel.js"></script>
+<script src="edit.js"></script>
+<script src="word-count.js"></script>
+</body>
+</html>
