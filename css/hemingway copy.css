@@ -1,0 +1,82 @@
+body {
+	padding: 20px;
+	background: #f4f4f4;
+}
+
+#hem-container {
+	position: relative;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.3em;
+	color: #0D0D0D;
+	width: 33em;
+	height: 100%;
+}
+
+#richtext {
+	position: absolute;
+	opacity: 0.6;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	resize: none;
+	border: 0;
+	border: none;
+	box-shadow: none;
+	outline: none;
+
+}
+
+#highlighter {
+	color: rgba(0,0,0,0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	border: 0;
+	border: none;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#stats { 
+	position:fixed; 
+	top:10;
+	left:800; 
+	text-align:right;
+}
+
+.yellow-sentence {
+	background-color: rgb(252, 248, 227);
+	color: rgb(192, 152, 83);
+}
+
+.red-sentence {
+	background-color: rgb(242, 222, 222);
+	color: rgb(185, 74, 72);
+}
+
+.token-bigword {
+	background: #E3B7E8;
+	color: #743C7A;
+}
+
+.token-passive {
+	background: #C4ED9D;
+	color: #5C8F2E;
+}
+
+.token-adverb {
+	background-color: #d9edf7;
+	color: #3a87ad;
+}
+
+span.token-protected:after {
+	content: ".";
+}

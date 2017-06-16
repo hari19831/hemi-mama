@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAOA,iCAAiC;EAChC,OAAO,EAAE,eAAe;EACxB,UAAU,EAAE,kBAAgB;EAC5B,MAAM,EAAE,eAAe;EACvB,UAAU,EAAE,eAAe;;AAE5B,iBAAiB;EAChB,UAAU,EAAE,kBAAsB;;AAEnC,0CAA0C;EACzC,UAAU,EAAE,eAAoB;EAChC,UAAU,EAAE,eAAe;;AAE5B,QAAQ;EACP,OAAO,EAAE,GAAG",
+"sources": ["ckeditor-override.sass"],
+"names": [],
+"file": "ckeditor-override.css"
+}
