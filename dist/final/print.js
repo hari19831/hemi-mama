@@ -1,0 +1,1 @@
+document.write("<script>window.print();</script>");
