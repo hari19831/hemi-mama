@@ -1,0 +1,25 @@
+{
+  "main": "index.html",
+  "name": "Hemingway",
+  "window": {
+    "title": "Hemingway Editor — Untitled",
+    "toolbar": false,
+    "frame": true,
+    "width": 1280,
+    "height": 800,
+    "position": "center",
+    "min_height": 600,
+    "show": false
+  },
+  "single-instance": false,
+  "version": "2.0.1",
+  "manifestUrl": "http://hemingway.blob.core.windows.net/manifest/package.json",
+  "packages": {
+      "mac": {
+         "url": "http://hemingway.blob.core.windows.net/osx32/Hemingway.zip"
+      },
+      "win": {
+         "url": "http://hemingway.blob.core.windows.net/win32/Hemingway.zip"
+      }
+    }
+}

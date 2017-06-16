@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/hemingway.css">
+<style type="text/css">
+	a {
+		cursor: pointer;
+		color: #1f6f99;
+		text-decoration: underline;
+	}
+</style>
+</head>
+<body><h2 id="credits">Credits</h2>
+<p>Hemingway was created by Adam and Ben Long.</p>
+<p>We couldn&#39;t have built this tool without help from some incredible open source software:</p>
+<ul>
+<li><a onclick="openNWLink()">node-webkit</a> enabled us to turn our web app into a full-featured desktop application</li>
+<li><a onclick="openTypoLink()">Typo.js</a> is a Javascript spell-checker. Since node-webkit&#39;s chromium doesn&#39;t support spell-check yet, Typo.js is a welcome alternative.</li>
+</ul>
+<script type="text/javascript">
+	var gui = require('nw.gui');
+
+	function openNWLink() {
+		gui.Shell.openExternal('http://nwjs.io/');
+	}
+
+	function openTypoLink() {
+		gui.Shell.openExternal('https://github.com/cfinke/Typo.js');	
+	}
+</script>
+</body>
+</html>

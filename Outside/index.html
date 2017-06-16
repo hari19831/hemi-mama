@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hemingway Editor</title>
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/hemingway.css">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+	<script src="dist/final/jquery-2.0.3.min.js"></script>
+	<script src="ckeditor/ckeditor.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/ckeditor-override.css">
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-43162123-1', 'hemingwayapp.com');
+	  ga('send', 'pageview');
+
+	</script>
+		<script>
+		var _prum = [['id', '5217e11dabe53d3005000000'],
+		             ['mark', 'firstbyte', (new Date()).getTime()]];
+		(function() {
+		    var s = document.getElementsByTagName('script')[0]
+		      , p = document.createElement('script');
+		    p.async = 'async';
+		    p.src = '//rum-static.pingdom.net/prum.min.js';
+		    s.parentNode.insertBefore(p, s);
+		})();
+	</script>
+</head>
+<body>
+
+	<div id="print"></div>
+
+	<button id="mobile-menu" class="menu-button"></button>
+	
+	<nav id="nav-bar-outer">
+		
+		<div id="formatting-bar">
+			<ul id="formatting-bar-group-1" class="formatting-bar-group">
+					<li><button id="formatting-bold" title="Bold. Cmd/Ctrl + B" class="button nav-button formatting-button">B</button></li>
+					<li><button id="formatting-italics" title="Italics. Cmd/Ctrl + I" class="button nav-button formatting-button"><em>I</em></button></li>
+				</ul>
+				<ul class="formatting-bar-group">
+					<li><button id="formatting-bullets" title="Bulleted List" class="button nav-button formatting-button">&nbsp;</button></li>
+					<li><button id="formatting-numbers" title="Numbered List" class="button nav-button formatting-button">&nbsp;</button></li>
+				</ul>
+				<ul class="formatting-bar-group">
+					<li><button id="formatting-outdent" title="Outdent. Cmd/Ctrl + [" class="button nav-button formatting-button">&nbsp;</button></li>
+					<li><button id="formatting-indent" title="Indent. Cmd/Ctrl + ]" class="button nav-button formatting-button">&nbsp;</button></li>
+				</ul>
+				<ul class="formatting-bar-group">
+					<li><button id="formatting-link" title="Hyperlink. Cmd/Ctrl + K" class="button nav-button formatting-button">&nbsp;</button></li>
+				</ul>
+				<ul class="formatting-bar-group">
+					<li><button id="formatting-p" title="Paragraph style." class="button nav-button formatting-button">P</button></li>
+					<li><button id="formatting-h1" title="H1 style." class="button nav-button formatting-button">H1</button></li>
+					<li><button id="formatting-h2" title="H2 style." class="button nav-button formatting-button">H2</button></li>
+					<li><button id="formatting-h3" title="H3 style." class="button nav-button formatting-button">H3</button></li>
+				</ul>
+				<!-- <p>&nbsp;</p> -->
+			</div>
+
+	</nav>
+
+	<section id="left-bar">
+		
+	</section>
+
+	<section id="stat-col">
+		
+		<header id="nav-bar">
+
+			<div><button id="mobile-menu-close" class="menu-button"><strong>CLOSE ></strong></button></div>
+
+			<img id="title" src="img/hemingway-logo.png">
+
+		</header>
+
+		<button id="write-button" title="Cmd/Ctrl + J" class="button toggle-button left-toggle-button">Write</button>
+		<button id="edit-button" title="Cmd/Ctrl + J" class="button toggle-button right-toggle-button active-toggle-button">Edit</button>
+		<a id="help-link" target="_blank" href="help.html">Help</a>
+
+		<div id="readability">
+			<hr>
+			<h4>Readability</h4>
+			<ul id="readability-bar"></ul>
+			<h3 id="readability-grade-text"><span id="readability-grade"></span> <span id="readability-rating"></span></h3>
+		</div>
+
+		<div id="stats">
+			<hr>
+			<ul id="stat-kpis">
+				<li><span id="stat-paragraphs"></span></li>
+				<li><span id="stat-sentences"></span></li>
+				<li><span id="stat-words"></span></li>
+				<li><span id="stat-characters"></span></li>
+				<li><span id="stat-letters"></span></li>
+				<li><span id="stat-readingTime"></span></li>
+			</ul>
+			<div id="stat-kpi-hide" class="stat-kpi-toggle button nav-button">Less<div class="arrow-up"></div></div>
+			<p id="stat-preview">
+				<em>Words: </em><strong id="stat-words-preview"></strong>
+				<button id="stat-kpi-show" class="button nav-button stat-kpi-toggle">More<div class="arrow-down"></div></button>
+			</p>
+			<hr>
+			<section id="stat-errors">
+				<p class="round-box yellow-sentence"><span id="stat-yellow-sentences" class="badge yellow-badge"></span> of <span class="stat-sentences"></span> sentences <span id="stat-yellow-is-are"></span>  hard to read.</p>
+				<p class="round-box red-sentence"><span id="stat-red-sentences" class="badge red-badge"></span> of <span class="stat-sentences"></span> sentences <span id="stat-red-is-are"></span> very hard to read.</p>
+				<p class="round-box token-bigword"><span id="stat-bigwords" class="badge purple-badge"></span><span id="stat-phrase-phrases"></span></p>
+				<p class="round-box token-adverb"><span id="stat-adverbs" class="badge blue-badge"></span><span id="stat-adverbs-target"></span></p>
+				<p class="round-box token-passive"><span id="stat-passives" class="badge green-badge"></span><span id="stat-passive-phrase"></span><span id="stat-passive-target"></span></p>
+			</section>
+		</div>
+		<p>&nbsp;</p>
+	</section>
+	<!--End of stats -->
+	
+		<div id="hem-container">
+
+			<div id="richtext" contenteditable>
+				<p></p><h3>Hemingway App makes your writing bold and clear.</h3><p>The app highlights long, complex sentences and common errors; if you see a yellow sentence, shorten or split it. If you see a red highlight, your sentence is so dense and complicated that your readers will get lost trying to follow its meandering, splitting logic &mdash; try editing this sentence to remove the red.</p>
+				<p>You can utilize a shorter word in place of a purple one. Mouse over it for hints.</p>
+				<p>Adverbs are helpfully shown in blue. Get rid of them and pick verbs with force instead.</p>
+				<p>Phrases in green have been marked to show passive voice.</p>
+				<p>You can <strong>format</strong> your <em>text</em> with the toolbar.</p>
+				<p>Paste in something you're working on and edit away. Or, click the Write button to compose something new.</p>
+			</div>
+
+			<div id="highlighter">
+				<p></p><h3>Hemingway App makes your writing bold and clear.</h3><p>Hemingway highlights long, complex sentences and common errors; if you see a yellow highlight, shorten the sentence or split it. If you see a red highlight, your sentence is so dense and complicated that your readers will get lost trying to follow its meandering, splitting logic &mdash; try editing this sentence to remove the red.</p>
+				<p>Adverbs are helpfully shown in blue. Get rid of them and pick verbs with force instead.</p>
+				<p>You can utilize a shorter word in place of a purple one. Mouse over it for hints.</p>
+				<p>Phrases in green have been marked to show passive voice.</p>
+				<p>You can <strong>format</strong> your <em>text</em> with the toolbar.</p>
+				<p>Paste in something you're working on and edit away. Or, click the Write button to compose something new.</p>
+			</div>
+
+			<div id="tooltip"></div>
+
+		</div>
+	<!-- End of Hemingway body -->
+	<div id="fileHelpers" class="hidden">
+		<input type="file" id="openDialog" accept=".txt, .html" />
+
+		<input type="file" id="openWordDialog" accept=".docx" />
+
+		<input type="file" id="saveAsDialog" nwsaveas="writing.html" accept=".txt, .html" />
+
+		<input type="file" id="exportMdDialog" nwsaveas="writing.md" accept=".md" />
+
+		<input type="file" id="exportWordDialog" nwsaveas="writing.docx" accept=".docx" />
+	</div>
+
+	<div id="loading-indicator">
+		Loading...
+		<!-- GIF -->
+	</div>
+
+	<footer id="footer">&copy; 2013-2015 .38 Long, LLC. Created by <a href="mailto:38longllc@gmail.com" style="color: inherit; text-decoration: underline;">Adam Long and Ben Long.</a></footer>
+	
+</body>
+<script src="dist/final/hem-obf.js"></script>
+</html>
