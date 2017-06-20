@@ -6,11 +6,12 @@ ul li a {
 		position:fixed;
 		height:100%;
 		right:0px;
-		width:200px;
+		width:250px;
 		color:#fff;
-		border-left: 1px solid gray;
+        /*border-left: 1px solid gray;*/
+        box-shadow: -3px 0px 3px 1px #aaaaaa;
 		top:0px;
-        background-color: rgba(255, 255, 179,0.3);
+        background-color: rgb(255, 255, 179);
 	}
 	.menu_panel_button {
 		float:right;
@@ -20,7 +21,7 @@ ul li a {
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-}
+      }
 	
 	.menu_panel_button {
     /* margin-left: -15px; */
