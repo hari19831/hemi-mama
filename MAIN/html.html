@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>integra</title>
+    <style>
+	body {
+		margin:0px;
+		padding:0px;
+	}
+	ul li a {
+		color:#383838;
+		font-size:18px;
+	}
+	.left_panel {
+		position:fixed;
+		height:100%;
+		right:0px;
+		width:200px;
+		color:#fff;
+		border-left: 1px solid #000;
+		top:0px;	
+	}
+	.menu_panel_button {
+		float:right;
+		margin-right:240px;
+	}
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+}
+	
+	.menu_panel_button {
+    /* margin-left: -15px; */
+     background: #f10;
+    margin-top: 50%;
+    position: absolute;
+    left: -161px;
+    top: 0px;
+    bottom: 0;
+    height: 40px;
+    margin: auto;
+}
+
+button.menu_panel_button.active {
+    background: #f10;
+    margin-top: 50%;
+    position: absolute;
+    left: -116px;
+    top: 0px;
+    bottom: 0;
+    height: 40px;
+    margin: auto;
+    background-color: aquamarine;
+}
+	</style>
+  </head>
+  <body>
+  
+  <div class="over_all">
+  
+   
+            
+	<!-- left panel start -->
+   
+    <div class="left_panel">
+	 <button type="button" class="menu_panel_button active">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                            
+    </button>
+	
+           <div class="navigation">
+                 <ul class="main_menu">
+                    <li><a href="#" class="menu_active"><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a></li>
+
+                 </ul>   
+           </div>
+    </div>
+    <!-- left panel end -->
+  
+
+    
+    </div>
+    
+    
+    <!-- Modal -->
+ 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+
+    <script>
+		//Enable sidebar toggle
+		$(".menu_panel_button").click(function () {
+			if ($(this).hasClass('active')) {
+				$(this).removeClass('active')
+				$('.left_panel').animate({
+					right: -240
+				}, 500);
+				$(".right_panel").animate({
+					"margin-right": "0px"
+				}, 500);
+			} else {
+				$(this).addClass('active')
+				//Else, enable content streching
+				$('.left_panel').animate({
+					right: 0
+				}, 500);
+				$(".right_panel").animate({
+					"margin-right": "-240px"
+				}, 500);
+			}
+			return false;
+		});
+	</script>
+
+
+  </body>
+</html>
