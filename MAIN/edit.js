@@ -510,10 +510,11 @@ var adv      = document.getElementById('adv');
 
 
 //----------------------------------------------------[Simple Alternatives]----------------------------------------------------------||
-var simple, simCount, simAlt;
+var simple, simCount, simAlt, another, anotherAlt;
 function suggestions()
 {
  simple = [], simAlt=[], simCount = 0; 
+    another = [], anotherAlt = [];
     
     for(var i=0; i<alt.length; i++)
     {
@@ -529,9 +530,27 @@ function suggestions()
      }
     }
     
-    altr.innerText = simCount;
+    
+    another = idata.value.match(/(-)?\b(a number of|abundance|accede to|accelerate|accentuate|accompany|accomplish|accorded|accrue|acquiesce|acquire|additional|adjacent to|adjustment|admissible|advantageous|adversely impact|advise|aforementioned|aggregate|aircraft|all of|alleviate|allocate|along the lines of|already existing|alternatively|ameliorate|anticipate|apparent|appreciable|as a means of|as of yet|as to|as yet|ascertain|assistance|at this time|attain|attributable to|authorize|because of the fact that|belated|benefit from|bestow|by virtue of|cease|close proximity|commence|comply with|concerning|consequently|consolidate|constitutes|demonstrate|depart|designate|discontinue|due to the fact that|each and every|economical|eliminate|elucidate|employ|endeavor|enumerate|equitable|equivalent|evaluate|evidenced|exclusively|expedite|expend|expiration|facilitate|factual evidence|feasible|finalize|first and foremost|for the purpose of|forfeit|formulate|honest truth|however|if and when|impacted|implement|in a timely manner|in accordance with|in addition|in all likelihood|in an effort to|in between|in excess of|in lieu of|in light of the fact that|in many cases|in order to|in regard to|in some instances |in terms of|in the near future|in the process of|inception|incumbent upon|indicate|indication|initiate|is applicable to|is authorized to|is responsible for|it is essential|literally|magnitude|maximum|methodology|minimize|minimum|modify|monitor|multiple|necessitate|nevertheless|not certain|not many|not often|not unless|not unlike|notwithstanding|null and void|numerous|objective|obligate|obtain|on the contrary|on the other hand|one particular|optimum|overall|owing to the fact that|participate|particulars|pass away|pertaining to|point in time|portion|possess|preclude|previously|prior to|prioritize|procure|proficiency|provided that|purchase|put simply|readily apparent|refer back|regarding|relocate|remainder|remuneration|require|requirement|reside|residence|retain|satisfy|shall|should you wish|similar to|solicit|span across|strategize|subsequent|substantial|successfully complete|sufficient|terminate|the month of|therefore|this day and age|time period|took advantage of|transmit|transpire|until such time as|utilization|utilize|validate|various different|very|whether or not|with respect to|with the exception of|witnessed)\b/gi);
+    
+     if(another!=null)
+     {
+         for(var j=0; j<another.length;j++)
+             {
+                 anotherAlt.push(''+iscore.lists.simpleAlternativeList[another[j]]);
+             }
+     }
+    
+    if(another!=null) { altr.innerText = another.length}
+       else
+            {  altr.innerText = 0; }
+    
+    
+    //altr.innerText = simCount;
     console.log(simple);
     console.log(simAlt);
+    console.log(another);
+    console.log(anotherAlt);
 }
 //--------------------------------------------------------------------------------------------------------------||
 
@@ -543,8 +562,10 @@ function adverbs()
  adverb = idata.value.match(/\S+ly\b/g);
  advb = idata.value.match(/(-)?\b(actuall|additionall|allegedl|all|alternativel|anomal|appl|approximatel|ashel|ashl|assembl|awfull|bail|bell|bel|bill|bradl|bristl|bubbl|bull|burl|butterfl|carl|charl|chill|comel|completel|compl|consequentl|costl|courtl|crinkl|crumbl|cuddl|curl|currentl|dail|dastardl|deadl|deathl|definitel|dill|disorderl|doil|doll|doll|dragonfl|earl|elderl|ell|emil|especiall|exactl|exclusivel|famil|finall|firefl|foll|friendl|frill|gadfl|gangl|generall|ghastl|giggl|globall|goodl|gravell|grisl|gull|hail|hall|harl|hardl|heavenl|hillbill|hill|holl|hol|homel|homil|horsefl|hourl|immediatel|instinctivel|impl|ital|jell|jiggl|jill|joll|jul|karl|karl|kell|kindl|latel|likel|lill|lil|lil|livel|loll|lonel|lovel|lowl|luckil|meal|measl|melanchol|mentall|moll|moll|monopol|monthl|multipl|nightl|oil|onl|orderl|panopl|particularl|partl|paull|pearl|pebbl|poll|potbell|presumabl|previousl|pual|quarterl|rall|rarel|recentl|rel|repl|reportedl|roughl|sall|scal|shapel|shell|shirl|shortl|sickl|sill|smell|sparkl|spindl|spritel|squiggl|statel|steel|suppl|surl|tall|tall|timel|troll|ugl|underbell|unfortunatel|unlikel|usuall|waverl|weekl|wholl|will|wil|wobbl|wool|worldl|wrinkl|yearl)y\b/gi);
     
-    for(var i=0; i<adverb.length; i++)
+    if(advb!=null)
         {
+            for(var i=0; i<adverb.length; i++)
+            {
             for(var j=0; j<advb.length; j++)
                 {
                     if(adverb[i].match(/\w+/g) == advb[j])
@@ -552,7 +573,10 @@ function adverbs()
                             adverb.splice(i,1);
                         }
                 }
+             }
+
         }
+        
     for(var k=0; k<adverb.length; k++)
         {
             adverb[k]=""+adverb[k].match(/\w+/g);
@@ -571,7 +595,10 @@ function passivefn()
 {
     passi = idata.value.match(/\b(is|are|was|were|be|been|being)(\s)(([a-z]+ed)|awoken|beaten|begun|bent|bitten|bled|blown|broken|brought|built|bought|caught|chosen|cut|dealt|done|drawn|driven|eaten|fed|felt|fought|found|forbidden|forgotten|forgiven|frozen|gotten|given|ground|ground|hung|heard|hidden|hit|held|hurt|kept|known|laid|led|left|let|lost|made|meant|met|paid|proven|put|read|ridden|rung|run|said|seen|sold|sent|shaken|shaved|shot|shown|shut|sung|sunk|slain|slid|spoken|spent|spun|split|spread|stolen|struck|swept|swung|taken|taught|torn|told|thought|thrown|undergone|understood|upset|woken|worn|won|withdrawn|written)(\sby)?\b/gi
 );
-    passive.innerText = passi.length;
+    if(passi!=null){  passive.innerText = passi.length;  }
+       else
+            {  passive.innerText = 0;  }
+    
     console.log(passi);
 }
 //--------------------------------------------------------------------------------------------------------------||

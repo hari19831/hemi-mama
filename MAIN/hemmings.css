@@ -28,7 +28,7 @@ ul li a {
      background-color: tan;
     margin-top: 50%;
     position: absolute;
-    left: -105px;
+    left: -60px;
     top: 0px;
     bottom: 0;
     height: 30px;
@@ -62,4 +62,9 @@ hr{
     border-right-width: 1px;
     border-bottom-width: 1px;
     border-left-width: 1px;
+}
+
+.readability, .wordCount, .suggestions{
+    padding-left:10px; 
+    padding-right:10px;
 }

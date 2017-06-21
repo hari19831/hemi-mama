@@ -15,7 +15,7 @@ function stats()
     Countable.once(idata, function (counter) {
          //console.log(this, counter);
          count = counter;
-        
+         console.log(counter);
          count.sentences = idata.value.split(/[.|!|?]\s/gi).length;//no.of.sentences
          count.letters   = idata.value.replace(/[^A-Z]/gi, "").length;//no.of.letters
          count.readTime  = Math.ceil(count.words/4.3);
@@ -63,5 +63,5 @@ function stats()
          //console.log(count);
          //console.log(igrade);
     });
-    updateSuggestions();
+    updateSuggestions(); // updates Suggestion ScoreCard...
 }

@@ -4,7 +4,7 @@
 			if ($(this).hasClass('active')) {
 				$(this).removeClass('active')
 				$('.left_panel').animate({
-					right: -300
+					right: -255
 				}, 500);
 				$(".right_panel").animate({
 					"margin-right": "0px"
