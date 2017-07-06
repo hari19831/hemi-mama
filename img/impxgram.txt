@@ -1,0 +1,33 @@
+Creates an Empty Document
+-------------------------------------------
+fetch('https://dox.grammarly.com/documents', {
+    method  : 'post',
+    headers : new Headers({'Content-Type': 'application/json', 'X-API-Version':'1'}),
+    body : '{}',
+    mode: 'cors',
+    credentials: 'include'
+}).then( response => {
+    return response.json(); }).then( parsed_result => {
+    console.log(parsed_result);
+});
+
+
+Creates a Document with Title and Body_Content
+------------------------------------------------------------------
+fetch('https://dox.grammarly.com/documents', {
+    
+method  : 'post',
+    
+headers : new Headers({'Content-Type': 'application/json', 'X-API-Version':'1'}),
+    
+body : '{"title":"hari","content":"Damn it is working erfdffd" }',
+    
+mode: 'cors',
+    
+credentials: 'include'}).then( 
+response => {
+    
+                      return response.json(); 
+}).then( parsed_result => {
+    
+           console.log(parsed_result); });
